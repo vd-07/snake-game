@@ -8,6 +8,7 @@ cvs.height = 400;
 //counting each frames 
 // this will help control the speed
 let frames = 0;
+let score = 0;
 
 const direction = {
     currrent: 0,
@@ -76,6 +77,18 @@ const snake = {
             ctx.closePath();
         }
     },
+    checkCollision: function(snakeX, snakeY) {
+        // checking if snake's body touches the food
+        return (getDistance(snakeX, snakeY, food.x, food.y) < 2 * this.radius);
+    },
+    allocateNewFood: function(snakeX, snakeY) {
+        food.x = Math.random() * cvs.width;
+        food.y = Math.random() * cvs.height;
+
+        // if the newly allocated food position touches the snake body
+        if(this.position.some(item => this.checkCollision(item.x, item.y)))
+            this.allocateNewFood(snakeX, snakeY);
+    },
     update : function() {
         
         // move the snake
@@ -114,13 +127,18 @@ const snake = {
             }
 
             //collision with food
-            if(getDistance(this.position[0].x, this.position[0].y, food.x, food.y) < 2 * this.radius) {
+            if(this.checkCollision(this.position[0].x, this.position[0].y)) {
                 // console.log("collision");
                 // new food
-                food.x = Math.random() * cvs.width;
-                food.y = Math.random() * cvs.height;
 
-                // increase snake laength from the last
+                //update and reflect score
+                score += 10;
+                document.getElementById('score').innerHTML = score;
+
+                //allocating new food
+                this.allocateNewFood(this.position[0].x, this.position[0].y);
+
+                // increase snake length from the last
                 this.position.push({x : this.position[this.position.length - 1].x, y : this.position[this.position.length - 1].y })
             }
 
