@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
+	<title>Play Snake Game </title>
     <head>
-        <style>
-            canvas {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                display: block;
-                border: 1px solid black;
-                margin: 1px;   
-                transform: translate(-50%, -50%);
-            }
-            #score {
-                text-align: center;
-                font-size: 140px;
-            }
-        </style>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   	    <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <div id="score">0</div>
-        <canvas id = "myCanvas"></canvas>
+    <body onload="window.alert('Welcome! Use arrow/direction keys to control your snake and eat food, and get as much score as possible! Remember not to eat yourself!  Good Luck!');">
+
+    	<!-- navigation panel -->
+    	<ul class="sidenav">
+		  <li><a class="active" href="#home">Play!</a></li>
+		  <li><a href="#news">Leaderboard</a></li>
+		  <li><a href="#contact">Your Profile</a></li>
+		  <li><a href="#about">About</a></li>
+		</ul>
+
+        <div id="score">Score : 0</div>
+        <div id="distance">Distance : 0</div>
+
+        <canvas id = "myCanvas" height=400 width=600></canvas>
+
+        <div id="gameover"></div>
         <script src = "script.js"></script>
     </body>
 </html>
