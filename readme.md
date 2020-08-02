@@ -19,6 +19,7 @@ This is the famous snake game, implemented in JavaScript. The game rules are sim
 3. ~Adding some style~
 4. ~Speed increase after a certain interval~
 5. ~Added navigation pane~
-6. Multiple food available
-7. User name input
-8. Enabling touch features and making it mobile-friendly.
+6. ~Increased responsiveness~
+7. Multiple food available
+8. User name input
+9. Enabling touch features and making it mobile-friendly.
