@@ -38,7 +38,7 @@ div.content {
   height: 1000px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen {
   ul.sidenav {
     width: 100%;
     height: auto;
@@ -63,36 +63,40 @@ div.content {
 canvas {
     background-color: red; /* For browsers that do not support gradients */
     background-image: linear-gradient(red, yellow);
-    position: absolute;
-    top: 60%;
-    left: 63%;
-    display: block;
-    border: 2px solid black;
-    margin: 1px;   
+    position: relative;
+    /*top: 60%;
+    left: 63%;*/
+    width: 60%;
+    height: 90%;
+    /*display: inline;*/
+    box-shadow: 10px 10px;
 
-    transform: translate(-50%, -50%);
+    border: 10px solid black;
+    margin: 1px;   
+    transform: translate(35%, +30%);
 }
 
-#score {
+#score, #scores {
     color: blue;
-    font: 140px/150px Georgia, serif;
-    position: absolute;
-    left: 45%;
-    /*font-size: 140px;*/
+    font: Georgia, serif;
+    position: relative;
+    /*position: absolute;*/
+    text-align: center;
 }
 
 #distance {
-    font: italic 40px/100px Basekerville, serif;
-	text-align: center;
-    position: absolute;
-    top: 20%;
-    left: 55%;
- /*   font-size: 70px;	*/
+    font: italic Basekerville, serif;
+	  text-align: center;
+    position: relative;
+    /*position: absolute;*/
+       
 }
 
 #gameover {
-    background-color: #f1f1f1;
-    height: 100%;
-    background-color: red;
+    /*background-color: #f1f1f1;*/
+    /*display: inline-block;*/
+    width: auto;
+    border: 2px solid ;
     text-align: center;
+    position: relative;
 }

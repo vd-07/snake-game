@@ -2,8 +2,11 @@
 <html>
 	<title>Play Snake Game </title>
     <head>
+   	    <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-   	    <link rel="stylesheet" href="style.css">
+    	<link rel="stylesheet" href="style.css">
+    	<link rel="stylesheet" href="bootstrap.css">
+   	    
     </head>
     <body onload="window.alert('Welcome! Use arrow/direction keys to control your snake and eat food, and get as much score as possible! Remember not to eat yourself!  Good Luck!');">
 
@@ -15,12 +18,12 @@
 		  <li><a href="#about">About</a></li>
 		</ul>
 
-        <div id="score">Score : 0</div>
+        <div id="scores"><h1>Score </h1> <h4 id="score">0</h4></div>
         <div id="distance">Distance : 0</div>
-
-        <canvas id = "myCanvas" height=400 width=600></canvas>
-
         <div id="gameover"></div>
+        
+        <canvas id = "myCanvas"></canvas>
+
         <script src = "script.js"></script>
     </body>
 </html>

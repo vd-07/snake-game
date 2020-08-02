@@ -2,15 +2,15 @@ const cvs = document.getElementById("myCanvas");
 const ctx = cvs.getContext("2d");
 
 // // height of the canvas
-cvs.width = 600;
-cvs.height = 400;
+// cvs.width = 600;
+// cvs.height = 400;
 
 //counting each frames 
 // this will help control the speed
 let frames = 0;
 let score = 0;
 let distance = 0;
-let speed = 12;
+let speed = 10;
 
 const direction = {
     currrent: 0,
@@ -146,7 +146,7 @@ const snake = {
 
             //update and reflect score
             score += 10 + Math.ceil(Math.sqrt(distance));
-            document.getElementById('score').innerHTML = "Score : " + String(score);
+            document.getElementById('score').innerHTML = score;
 
             //allocating new food
             this.allocateNewFood(this.position[0].x, this.position[0].y);
@@ -166,7 +166,7 @@ const snake = {
     },
 
     speedUp: function() {
-        if(speed > 1 && distance % 150 == 0)
+        if(speed > 1 && distance > 0 && distance % 150 == 0)
             speed--;
     },
 
